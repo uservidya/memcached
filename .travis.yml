@@ -3,6 +3,8 @@ rvm:
   - 2.0.0
 before_script:
   - bundle exec berks install
+services :
+ - memcached
 script:
   - bundle exec foodcritic -f any --tags ~FC015 .
   - bundle exec rspec --color --format progress
